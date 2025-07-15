@@ -17,7 +17,7 @@ RSpec.describe Opportunities::ApplyService, type: :service do
         expect(@application.opportunity).to eq(opportunity)
         expect(@application.job_seeker).to eq(job_seeker)
 
-        expect(NotifyJobSeekerJob).to have_been_enqueued.with(@application.id)
+        expect(NotifyApplicationJob).to have_been_enqueued.with(@application.id)
       end
     end
 

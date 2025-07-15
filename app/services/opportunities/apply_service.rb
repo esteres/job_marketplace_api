@@ -12,7 +12,7 @@ module Opportunities
       job_seeker = JobSeeker.find(job_seeker_id)
 
       application = opportunity.job_applications.create!(job_seeker:)
-      NotifyJobSeekerJob.perform_later(application.id)
+      NotifyApplicationJob.perform_later(application.id)
 
       application
     end
