@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :opportunity do
-    title { "MyString" }
-    description { "MyString" }
-    salary { 1 }
-    client { nil }
-    job_applications_count { 1 }
+    title       { Faker::Job.title }
+    description { Faker::Job.field }
+    salary      { Faker::Number.between(from: 40_000, to: 200_000) }
+    association :client
+    job_applications_count { 0 }
   end
 end

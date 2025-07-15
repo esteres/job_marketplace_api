@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :job_seeker do
-    name { "MyString" }
-    email { "MyString" }
+    name  { Faker::Name.name }
+    email { Faker::Internet.unique.email(domain: 'example.com') }
   end
 end
