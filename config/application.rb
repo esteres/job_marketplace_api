@@ -29,5 +29,8 @@ module JobMarketplaceApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.active_job.queue_adapter = :sidekiq
+    # config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end

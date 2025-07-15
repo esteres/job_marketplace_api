@@ -53,6 +53,10 @@ group :development, :test do
   gem "faker"
 end
 
+group :development do
+  gem "letter_opener_web"
+end
+
 group :test do
   gem "shoulda-matchers"
 end

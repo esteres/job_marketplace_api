@@ -32,7 +32,7 @@ RSpec.describe Opportunities::SearchService, type: :service do
         result = described_class.call(search: "Engineer", page: 1)
 
         expect(result).to be_success
-        pagy, records = result.data
+        _, records = result.data
 
         expect(records).to include(op1)
         expect(records).not_to include(op2, op3)
